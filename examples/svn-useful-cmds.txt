@@ -1,0 +1,13 @@
+svn merge -c<rev#> svn://<repo.path.including.branch> --ignore-ancestry
+svn merge -c<rev#1> -c<rev#2> -c<rev#3> svn://<repo.path.including.branch> --ignore-ancestry
+
+
+svn cp svn://<from.branch> svn://<to.branch> -m'<commit msg'
+svn rm svn://<branch to remove> -m"removing old branch"
+
+-- to revert all changes from for example, r119872 from a given branch, do the following:
+
+svn merge --depth=infinity -r119872:119871 svn://<the branch name> <local checkout path>
+
+-- then commit!
+

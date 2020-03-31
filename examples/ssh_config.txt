@@ -1,0 +1,22 @@
+# put the code below (without these comments) in ~/.ssh/config file if you want to use two different git accounts from the same computer command-line.
+# this assumes you have the id_rsa files for each of the two github identities present in the .ssh dir.
+# If you don't have the id_rsa files, then create them with ssh-keygen cmd
+# then when cloning the repo's from each of the git accounts, use respectively:
+#>git clone git@aditi-git:aditi/cool-repo-a.git
+#>git clone git@balu-git:balu/vet-repo-b.git
+
+
+Host *
+    UseKeychain yes
+
+Host aditi-git
+    User git
+    Hostname github.com
+    IdentityFile ~/.ssh/id_rsa_aditi
+    IdentitiesOnly yes
+
+Host balu-git
+    User git
+    Hostname github.com
+    IdentityFile ~/.ssh/id_rsa_balu
+    IdentitiesOnly yes
