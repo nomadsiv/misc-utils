@@ -38,9 +38,16 @@ def _usage():
 if __name__ == "__main__":
 
     """
-        # prereq: poppler (a stand-alone util which is wrapped by python library pdf2image
+        # prereq: poppler (a stand-alone util which is wrapped by python library pdf2image)
+        # poppler for Windows Subsystem Linux:
+        sudo apt install poppler-utils
+        
+        poppler for windows:
+        https://stackoverflow.com/questions/18381713/how-to-install-poppler-on-windows
+        http://blog.alivate.com.au/poppler-windows/
 
-        # pip install pdf2image
+        # pip install pdf2image (do within a virtual env for best hygiene)
+
         this script reads either:
         - a pdf file from the given path and converts it to jpg
         - a directory containing pdf's and converts each pdf in the dir to jpg
